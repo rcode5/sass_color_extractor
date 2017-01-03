@@ -9,7 +9,7 @@ Rails app.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sass_color_extractor'
+gem 'sass-color-extractor'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sass_color_extractor
+    $ gem install sass-color-extractor
 
 ## Usage
 
