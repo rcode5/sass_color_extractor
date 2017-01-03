@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sass_color_extractor/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "sass_color_extractor"
+  spec.name          = "sass-color-extractor"
   spec.version       = SassColorExtractor::VERSION
   spec.authors       = ["Mr Rogers"]
   spec.email         = ["jon@rcode5.com"]
