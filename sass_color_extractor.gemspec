@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jon@rcode5.com"]
   spec.summary       = %q{Extract colors from Sass/Scss in ruby - can be used to generate a nice palette for a Rails app.}
   #spec.description  = ""
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/rcode5/sass_color_extractor"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
