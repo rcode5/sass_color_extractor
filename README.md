@@ -22,6 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
+### Basic Usage
 You should extract your color variables into their own file (which you would then `@import` as necessary
 in your scss/sass files.  Once you have that, you can get a map of color names to their hex color like so:
 
@@ -52,6 +53,74 @@ You'd get a hash in ruby like this:
   "dark_gray"=>"333333"
 }
 ```
+
+### Add Palette page to a Rails app
+
+To add a page in your Rails app that shows all the colors defined in the palette with their corresponding hex value, 
+add a route, controller and view:
+
+```
+# config/routes.rb
+
+MyApp::Application.routes.draw do
+  ...
+  resource :palette, only: [:show]
+end   
+```
+
+``` 
+# app/controllers/palettes_controller.rb
+class PalettesController < ApplicationController
+  def show
+    f = File.expand_path('app/assets/stylesheets/_colors.scss')
+    @colors = SassColorExtractor::Base.parse_colors(f)
+  end
+add
+```
+
+```
+# app/views/palettes/show.html.slim
+.palette-colors
+  - @colors.each do |name, hexval|
+    .palette-colors__color(style="background-color: ##{hexval}")
+      .palette-colors__color-info
+        .palette-colors__color-info__name = name
+        .palette-colors__color-info__hexval = "##{hexval}"
+```
+
+With a little CSS:
+```
+// app/assets/stylesheets/palette.scss
+.palette-colors {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.palette-colors__color {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin: 7px;
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+.palette-colors__color-info {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 4px;
+  text-align:center;
+  background-color: rgba(200,200,200,0.7);
+  font-size: 0.8rem;
+  border-radius: 4px;
+  color: #000;
+}
+```
+
+You should get a nice little palette.
+
+
+
 
 ## Contributing
 
