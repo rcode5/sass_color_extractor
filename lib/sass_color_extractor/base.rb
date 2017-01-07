@@ -1,3 +1,4 @@
+require 'byebug'
 module SassColorExtractor
   class Base
     DEFAULT_SYNTAX = :scss
@@ -12,7 +13,7 @@ module SassColorExtractor
     class << self
       private
       def guess_syntax(file)
-        guess = File.extname(file)[-1..1].to_sym
+        guess = File.extname(file)[1..-1].to_sym
         [:sass, :scss].include?(guess) ? guess : DEFAULT_SYNTAX
       end
     end

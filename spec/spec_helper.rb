@@ -1,2 +1,2 @@
 require 'rspec'
-require_relative "../lib/sass_color_extractor.rb"
+require_relative "../lib/sass-color-extractor.rb"
