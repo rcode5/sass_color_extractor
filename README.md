@@ -4,6 +4,9 @@ This dirt simple Gem uses the Sass ruby library to read your `colors.scss` file 
 a list of color names and their actual colors which can be used to generate a nice color palette page in a
 Rails app.
 
+[![Gem Version](https://badge.fury.io/rb/sass-color-extractor.png)](http://badge.fury.io/rb/sass_color_extractor)
+[![Build Status](https://circleci.com/gh/rcode5/sass_color_extractor.svg?style=shield&circle-token=485f42e03b961bb2ac17e9ee814fe963bd58954c)]()
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -56,7 +59,7 @@ You'd get a hash in ruby like this:
 
 ### Add Palette page to a Rails app
 
-To add a page in your Rails app that shows all the colors defined in the palette with their corresponding hex value, 
+To add a page in your Rails app that shows all the colors defined in the palette with their corresponding hex value,
 add a route, controller and view:
 
 ```
@@ -65,10 +68,10 @@ add a route, controller and view:
 MyApp::Application.routes.draw do
   ...
   resource :palette, only: [:show]
-end   
+end
 ```
 
-``` 
+```
 # app/controllers/palettes_controller.rb
 class PalettesController < ApplicationController
   def show
