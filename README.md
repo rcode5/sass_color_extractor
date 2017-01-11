@@ -4,6 +4,8 @@ This dirt simple Gem uses the Sass ruby library to read your `colors.scss` file 
 a list of color names and their actual colors which can be used to generate a nice color palette page in a
 Rails app.
 
+If you are using Bootstrap and overriding Bootstrap colors, this Gem will probably not work for you.  It requires that all color definitions are made in a single file.  Perhaps in the future it will follow `@import`s.
+
 [![Gem Version](https://badge.fury.io/rb/sass-color-extractor.png)](http://badge.fury.io/rb/sass_color_extractor)
 [![Build Status](https://circleci.com/gh/rcode5/sass_color_extractor.svg?style=shield&circle-token=485f42e03b961bb2ac17e9ee814fe963bd58954c)]()
 
