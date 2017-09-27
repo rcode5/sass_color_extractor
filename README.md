@@ -80,7 +80,7 @@ class PalettesController < ApplicationController
     f = File.expand_path('app/assets/stylesheets/_colors.scss')
     @colors = SassColorExtractor::Base.parse_colors(f)
   end
-add
+end
 ```
 
 ```
