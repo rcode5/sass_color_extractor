@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "sass", "~> 3.4"
 
   spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.5"
   spec.add_development_dependency "byebug", "~> 3.5"
   spec.add_development_dependency "bundle-audit", "~> 0.1.0"
