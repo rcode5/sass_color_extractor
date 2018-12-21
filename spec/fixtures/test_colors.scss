@@ -7,8 +7,20 @@ $white: #ffffff;
 
 $light_yellr: lighten($yellr, 20%);
 $dark_yellr: darken($yellr, 10%);
+$orangey: rgba(200,100,10, 0.2);
 
 @mixin this { color: whatever; }
 .style { overflow:hidden; }
 
 // empty line and comment line
+
+
+// Conditionals
+$dynamic-color: yellow;
+
+@if $external-setting == true {
+  $dynamic-color: blue;
+}
+@else {
+  $dynamic-color: red;
+}

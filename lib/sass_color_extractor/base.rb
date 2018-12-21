@@ -1,3 +1,4 @@
+require "byebug"
 module SassColorExtractor
   class Base
     DEFAULT_SYNTAX = :scss
@@ -5,7 +6,9 @@ module SassColorExtractor
     def self.parse_colors(sass_file)
       syntax = guess_syntax(sass_file)
       engine = Sass::Engine.for_file(sass_file, syntax: syntax)
-      colors = VariableEvaluator.visit(engine.to_tree).compact.reject{|entry| entry.flatten.empty?}
+      colors = VariableEvaluator.visit(engine.to_tree).each_with_object({}) do |(name, color), acc|
+        acc[name] = color if name && color
+      end
       Hash[colors.map{|name, color| [ name, color.to_s.gsub(/^#/,'') ]}]
     end
 

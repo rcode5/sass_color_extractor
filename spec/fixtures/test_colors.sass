@@ -5,6 +5,7 @@ $red: #ff0000
 $yellr: #fc2
 $light_yellr: lighten($yellr, 20%)
 $dark_yellr: darken($yellr, 10%)
+$orangey: rgba(200,100,10, 0.2)
 
 @mixin this
   color: whatever
@@ -12,3 +13,13 @@ $dark_yellr: darken($yellr, 10%)
   overflow:hidden
 
 // empty line and comment line
+
+// conditionals
+
+// Conditionals
+$dynamic-color: yellow
+
+@if $external-setting == true
+  $dynamic-color: blue
+@else
+  $dynamic-color: red
