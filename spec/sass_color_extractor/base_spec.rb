@@ -13,7 +13,9 @@ describe SassColorExtractor::Base do
                                 "white" => "ffffff",
                                 "red" => "ff0000",
                                 "yellr" => "fc2",
+                                "dynamic-color" => "yellow",
                                 "light_yellr" => "ffe488",
+                                "orangey" => "rgba(200, 100, 10, 0.2)",
                                 "dark_yellr" => "eeb700"
                               })
       end
@@ -28,8 +30,10 @@ describe SassColorExtractor::Base do
                                 "white" => "ffffff",
                                 "red" => "ff0000",
                                 "yellr" => "fc2",
+                                "dynamic-color" => "yellow",
                                 "light_yellr" => "ffe488",
-                                "dark_yellr" => "eeb700"
+                                "orangey" => "rgba(200, 100, 10, 0.2)",
+                                "dark_yellr" => "eeb700",
                               })
       end
     end
