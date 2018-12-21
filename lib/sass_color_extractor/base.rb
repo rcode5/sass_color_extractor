@@ -1,4 +1,3 @@
-require "byebug"
 module SassColorExtractor
   class Base
     DEFAULT_SYNTAX = :scss
