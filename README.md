@@ -25,8 +25,6 @@ $all_colors: (
 
 Then you can generate classes for your palette with something like
 ```scss
-
-```
 @each $name, $color in $all_colors {
   .palette-colors__color--#{$name} {
     background-color: #{$color};
