@@ -1,3 +1,60 @@
+# SassColorExtractor - DEPRECATED - DO NOT USE
+
+With Ruby Sass being deprecated and unmaintained as of March 26 2019, this gem will no longer be something
+you should depend on.
+
+As a replacement, you could try building custom color classes using Sass with something like the following.
+
+Add to your colors file a map of all colors.
+
+```scss
+/* My Colors File */
+$black: #000;
+$white: #ffffff;
+$light_gray: darken($white, 20%);
+$dark_gray: lighten($black, 20%);
+
+/** Map of colors **/
+$all_colors: (
+  "black": $black,
+  "white": $white,
+  "light_gray": $light_gray,
+  "dark_gray": $dark_gray
+);
+```
+
+Then you can generate classes for your palette with something like
+```scss
+
+```
+@each $name, $color in $all_colors {
+  .palette-colors__color--#{$name} {
+    background-color: #{$color};
+  }
+}
+```
+
+And in your view you'll need to add a duplicate list of these colors with something like
+
+```slim
+# app/views/palettes/show.html.slim
+ruby:
+  colors = %w( black white light_gray dark_gray )
+
+.palette-colors
+  - colors.each do |color|
+    .palette-colors__color class="palette-colors__color--#{color}"
+      .palette-colors__color-info
+        .palette-colors__color-info__name = color
+```
+
+This will no longer show the value, though I'm sure you could figure that out with some more
+SCSS interpolation.
+
+For more reading: [Ruby Sass is Deprecated](http://sass.logdown.com/posts/7081811)
+
+---------------
+
 # SassColorExtractor
 
 This dirt simple Gem uses the Sass ruby library to read your `colors.scss` file and give you back
